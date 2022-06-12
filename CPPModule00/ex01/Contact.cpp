@@ -33,14 +33,39 @@ void Contact::getInfo()
 	cout << "Darkest Secret:\n";
 	getline(cin, str);
 	darkestSecret = str;
-	cout << firstName + "\n";
-	cout << lastName + "\n";
-	cout << nickname + "\n";
-	cout << phoneNumber + "\n";
-	cout << darkestSecret + "\n";
+	cout << "Done! Contact added\n";
+	cout << "Commands available: ADD, SEARCH, or EXIT\n";
+}
+
+static void	displaysearch(string text)
+{
+	if (text.length() <= 10)
+	{
+		for (int i = 0; i + text.length() < 10; ++i)
+		{
+			cout << " ";
+		}
+		cout << text;
+	}
+	else
+		cout << text.substr(0, 9) << ".";
+	cout << "|";
 }
 
 void Contact::showInfo()
 {
-	cout << firstName;
+	displaysearch(firstName);
+	displaysearch(lastName);
+	displaysearch(nickname);
+	cout << "\n";
+}
+
+void Contact::showAllInfo()
+{
+	displaysearch(firstName);
+	displaysearch(lastName);
+	displaysearch(nickname);
+	displaysearch(phoneNumber);
+	displaysearch(darkestSecret);
+	cout << "\n";
 }

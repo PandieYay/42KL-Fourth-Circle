@@ -15,6 +15,7 @@ class Contact {
 		Contact();
 		void getInfo();
 		void showInfo();
+		void showAllInfo();
 };
 
 #endif
