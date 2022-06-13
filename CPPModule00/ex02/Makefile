@@ -1,6 +1,6 @@
-NAME = phonebook
-SRCS = ./main.cpp ./PhoneBook.cpp ./Contact.cpp
-INC = ./Contact.hpp ./PhoneBook.hpp
+NAME = accounts
+SRCS = ./Account.cpp ./tests.cpp
+INC = ./Account.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
@@ -14,4 +14,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
