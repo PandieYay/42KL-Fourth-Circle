@@ -115,5 +115,4 @@ void Account::displayStatus(void) const
 {
 	_displayTimestamp();
 	cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << "\n";
-	// _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << "\n";
 }
