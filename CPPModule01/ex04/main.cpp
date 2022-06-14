@@ -9,12 +9,12 @@ static string sed(string text, string s1, string s2)
 
 	while((pos = text.find(s1)) != string::npos)
 	{
-		newtext = text.substr(i, pos);
+		newtext += text.substr(i, pos);
 		newtext += s2;
-		i = pos;
 		text.erase(pos, len);
+		i = pos;
 	}
-	newtext += text.substr(i, s1.length());
+	newtext += text.substr(i, (text.length() - i));
 	return (newtext);
 }
 
