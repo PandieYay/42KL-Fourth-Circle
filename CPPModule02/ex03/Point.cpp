@@ -18,3 +18,11 @@ Point &Point::operator=(Point &a){
 
 Point::~Point(){
 }
+
+float Point::getxfloat(void){
+	return(_x.toFloat());
+}
+
+float Point::getyfloat(void){
+	return(_y.toFloat());
+}

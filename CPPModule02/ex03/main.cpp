@@ -3,14 +3,13 @@
 #include <iostream>
 
 int main(void) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Point a1;
-	Point b2;
-	Point c2;
-	Point point;
-	if (a != b)
-		cout << "Now we're talking" << endl;
-	bsp(a1, b2, c2, point);
+	Point a(0, 15);
+	Point b(3, 12);
+	Point c(5, 13);
+	Point point(3, 13);
+	if (bsp(a, b, c, point) == true)
+		cout << "Point is inside the triangle" << endl;
+	else
+		cout << "Point is not inside the triangle" << endl;
 	return 0;
 }
