@@ -37,6 +37,10 @@ void ClapTrap::beRepaired(unsigned int amount){
 	else
 		cout << "Not enough energy.\n";}
 
+ClapTrap::ClapTrap(){
+	cout << "Constructor called\n";
+}
+
 ClapTrap::ClapTrap(string name){
 	_name = name;
 	_hitPoints = 100;

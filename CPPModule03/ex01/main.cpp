@@ -5,6 +5,7 @@ int	main(void){
 	ClapTrap trap("Bob");
 	ScavTrap trap2("Bobby");
 
+	trap2.guardGate();
 	trap2.attack("Bob");
 	trap.attack("Bobby");
 	trap2.takeDamage(20);
