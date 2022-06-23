@@ -8,13 +8,13 @@ void DiamondTrap::whoAmI(void){
 	cout << "I am " << _name << " and I am also " << ClapTrap::_name << "\n";
 }
 
-DiamondTrap::DiamondTrap(string name)
+DiamondTrap::DiamondTrap(string name): ScavTrap(name)
 {
 	cout << "DiamondTrap constructor called\n";
 	_name = name;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 30;
+	_hitPoints = FragTrap::_hitPoints;
+	_energyPoints = ScavTrap::_energyPoints;
+	_attackDamage = FragTrap::_attackDamage;
 	ClapTrap::_name = _name + "_clap_name";
 }
 

@@ -20,7 +20,7 @@ void ScavTrap::guardGate(void){
 }
 
 ScavTrap::ScavTrap(){
-	cout << "ScavTrap Constructor called\n";
+	cout << "ScavTrap constructor called\n";
 }
 
 ScavTrap::ScavTrap(string name): ClapTrap(name)

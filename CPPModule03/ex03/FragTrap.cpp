@@ -21,11 +21,12 @@ void FragTrap::highFiveGuys(void){
 
 FragTrap::FragTrap(){
 	cout << "FragTrap Constructor called\n";
+	_attackDamage = 30;
 }
 
 FragTrap::FragTrap(string name): ClapTrap(name)
 {
-	cout << "FragTrap constructor called\n";
+	cout << "FragTrap with string constructor called\n";
 	_energyPoints = 100;
 	_attackDamage = 30;
 }
