@@ -8,19 +8,21 @@ void Cat::makeSound(void) const{
 Cat::Cat(){
 	cout << "Cat constructor called" << std::endl;
     _type = "Cat";
-    const Brain* meta = new Brain();
+    brain = new Brain();
 }
 
 Cat::Cat(const Cat &a){
     _type = a._type;
+    brain = new Brain();
 }
 
 Cat &Cat::operator=(const Cat &a){
     _type = a._type;
+    brain = new Brain();
 	return *this;
 }
 
 Cat::~Cat(){
 	cout << "Cat destructor called" << std::endl;
-    delete meta;
+    delete brain;
 }
