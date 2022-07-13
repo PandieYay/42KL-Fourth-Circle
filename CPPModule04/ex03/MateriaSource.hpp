@@ -5,8 +5,11 @@
 #include "AMateria.hpp"
 
 class MateriaSource: public IMateriaSource {
+    private:
+        AMateria *_materia[4];
+        static int _size;
     public:
-        void learnMateria(AMateria*);
+        void learnMateria(AMateria *materia);
         AMateria *createMateria(string const &type);
 };
 

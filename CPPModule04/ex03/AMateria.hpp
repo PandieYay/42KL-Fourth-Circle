@@ -3,8 +3,10 @@
 
 class AMateria;
 #include "ICharacter.hpp"
+#include <iostream>
 #include <string>
 
+using std::cout;
 using std::string;
 
 class AMateria {
@@ -12,6 +14,7 @@ class AMateria {
         string _type;
     public:
         AMateria(string const & type);
+        AMateria();
     	virtual ~AMateria();
         string const & getType() const; //Returns the materia type
         virtual AMateria *clone() const = 0;
