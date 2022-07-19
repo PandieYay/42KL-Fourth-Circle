@@ -11,6 +11,9 @@ class Character: public ICharacter {
         static int _size;
     public:
         Character(string name);
+		Character(const Character &a);
+		Character &operator = (const Character &a);
+        ~Character();
         string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);

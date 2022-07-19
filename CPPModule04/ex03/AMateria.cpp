@@ -7,6 +7,15 @@ AMateria::AMateria(string const &type){
 AMateria::AMateria(){
 }
 
+AMateria::AMateria(const AMateria &a){
+    _type = a._type;
+}
+
+AMateria &AMateria::operator=(const AMateria &a){
+    _type = a._type;
+	return *this;
+}
+
 AMateria::~AMateria(){
 }
 

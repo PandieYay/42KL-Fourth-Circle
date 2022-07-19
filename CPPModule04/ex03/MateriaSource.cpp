@@ -2,6 +2,21 @@
 
 int MateriaSource::_size = 0;
 
+MateriaSource::MateriaSource(){
+}
+
+MateriaSource::MateriaSource(const MateriaSource &a){
+    _size = a._size;
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &a){
+    _size = a._size;
+	return *this;
+}
+
+MateriaSource::~MateriaSource(){
+}
+
 void MateriaSource::learnMateria(AMateria *materia){
     if (_size <= 3)
     {

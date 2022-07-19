@@ -6,6 +6,9 @@
 class Cure: public AMateria {
     public:
         Cure();
+		Cure(const Cure &a);
+		Cure &operator = (const Cure &a);
+        ~Cure();
         AMateria *clone() const;
         void use(ICharacter& target);
 };
