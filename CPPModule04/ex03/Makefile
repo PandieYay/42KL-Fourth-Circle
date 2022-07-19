@@ -1,5 +1,5 @@
 NAME = ./a.out
-SRCS = ./main.cpp ./AMateria.cpp ./Ice.cpp ./Cure.cpp ./ICharacter.cpp ./Character.cpp ./IMateriaSource.cpp ./MateriaSource.cpp
+SRCS = ./main.cpp ./AMateria.cpp ./Ice.cpp ./Cure.cpp ./Character.cpp ./MateriaSource.cpp
 INC = ./AMateria.hpp ./Ice.hpp ./Cure.hpp ./ICharacter.hpp ./Character.hpp ./IMateriaSource.hpp ./MateriaSource.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)

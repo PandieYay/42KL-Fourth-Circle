@@ -1,9 +1,12 @@
 #include "Ice.hpp"
 
+Ice::Ice(){
+    _type = "ice";
+}
+
+
 AMateria *Ice::clone() const {
-    AMateria *tmp;
-    tmp = NULL;
-    return (tmp);
+    return (new Ice(*this));
 }
 
 void Ice::use(ICharacter &target){

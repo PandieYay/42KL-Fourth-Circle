@@ -8,6 +8,7 @@ class Character: public ICharacter {
     private:
         string _name;
         AMateria *_inventory[4];
+        static int _size;
     public:
         Character(string name);
         string const & getName() const;

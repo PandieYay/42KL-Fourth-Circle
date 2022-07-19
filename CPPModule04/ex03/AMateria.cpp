@@ -5,11 +5,9 @@ AMateria::AMateria(string const &type){
 }
 
 AMateria::AMateria(){
-    cout << "AMateria constructor called\n";
 }
 
 AMateria::~AMateria(){
-    cout << "AMateria destructor called\n";
 }
 
 string const &AMateria::getType() const{

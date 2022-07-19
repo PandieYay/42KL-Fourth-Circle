@@ -1,9 +1,11 @@
 #include "Cure.hpp"
 
+Cure::Cure(){
+    _type = "cure";
+}
+
 AMateria *Cure::clone() const {
-    AMateria *tmp;
-    tmp = NULL;
-    return (tmp);
+    return (new Cure(*this));
 }
 
 void Cure::use(ICharacter &target){

@@ -13,7 +13,6 @@ void MateriaSource::learnMateria(AMateria *materia){
 AMateria *MateriaSource::createMateria(string const &type){
     for (int i = 0; i < _size; i++)
     {
-        cout << _materia[i]->getType() << "Hi\n";
         if (_materia[i]->getType() == type)
             return(_materia[i]);
     }
