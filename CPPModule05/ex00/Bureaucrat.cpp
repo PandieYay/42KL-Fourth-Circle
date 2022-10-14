@@ -3,16 +3,6 @@
 #include <iostream>
 using std::cout; // remove later
 
-void Bureaucrat::_GradeTooHighException(void)
-{
-    throw std::range_error("Grade too high bro");
-}
-
-void Bureaucrat::_GradeTooLowException(void)
-{
-    throw std::range_error("Grade too low bro");
-}
-
 string Bureaucrat::getName(void)
 {
     return _name;
@@ -27,30 +17,40 @@ void Bureaucrat::incrementGrade(int n)
 {
     _grade -= n;
     if (_grade > 150)
-        _GradeTooLowException();
+        throw GradeTooLowException();
     else if (_grade < 1)
-        _GradeTooHighException();
+        throw GradeTooHighException();
 }
 
 void Bureaucrat::decrementGrade(int n)
 {
     _grade += n;
     if (_grade > 150)
-        _GradeTooLowException();
+        throw GradeTooLowException();
     else if (_grade < 1)
-        _GradeTooHighException();
+        throw GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(string name, int grade)
 {
     if (grade > 150)
-        _GradeTooLowException();
+        throw GradeTooLowException();
     else if (grade < 1)
-        _GradeTooHighException();
+        throw GradeTooHighException();
     _name = name;
     _grade = grade;
 }
 
 Bureaucrat::~Bureaucrat()
 {
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade Too High\n");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade Too Low\n");
 }
