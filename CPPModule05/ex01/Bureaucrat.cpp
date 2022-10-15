@@ -1,7 +1,5 @@
 #include "Bureaucrat.hpp"
 
-#include <iostream>
-
 string Bureaucrat::getName(void)
 {
     return _name;
@@ -63,4 +61,17 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Grade Too Low\n");
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+       form.beSigned(*this);
+       cout << _name << " successfully signed " << form.getName() << "!\n";
+    }
+    catch(Form::GradeTooLowException &e)
+    {
+        cout << _name << " couldn't sign " << form.getName() << " because " <<  e.what() << '\n';
+    }
 }
