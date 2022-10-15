@@ -36,7 +36,7 @@ public:
         const char *what() const throw();
     };
     void beSigned(Bureaucrat bureaucrat);
-    virtual void execute(Bureaucrat const &executor) const;
+    virtual void execute(Bureaucrat const &executor) const = 0;
     class FormNotSignedException : public std::exception
     {
     public:

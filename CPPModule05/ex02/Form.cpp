@@ -80,15 +80,3 @@ void Form::beSigned(Bureaucrat bureaucrat)
     else
         throw GradeTooLowException();
 }
-
-void Form::execute(Bureaucrat const &executor) const
-{
-    if (this->getIfSigned() == false)
-        throw FormNotSignedException();
-    if (executor.getGrade() <= _gradeToExecute)
-    {
-        cout << "Base form is executed, but nothing happened!\n";
-    }
-    else
-        throw GradeTooLowException();
-}
