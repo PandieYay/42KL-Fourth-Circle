@@ -46,7 +46,7 @@ Form		*makeShrubberyCreationForm(string const target)
 Form *Intern::makeForm(string form, string target)
 {
     string formList[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-    Form*  (*array[3])(string) = {&makePresidentialPardonForm, &makeRobotomyRequestForm, &makeShrubberyCreationForm};
+    Form*  (*array[3])(string) = {&makeShrubberyCreationForm, &makeRobotomyRequestForm, &makePresidentialPardonForm};
     for (int i = 0; i < 3; i++)
     {
         if (formList[i] == form)
