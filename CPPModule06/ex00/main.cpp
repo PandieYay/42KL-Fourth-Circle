@@ -74,8 +74,8 @@ void convert(char *argv)
         cout << "int: " << static_cast<int>(i) << "\n";
     cout << "float: " << static_cast<float>(i);
     if (i == static_cast<int>(i))
-        cout << ".0f";
-    cout << "\n";
+        cout << ".0";
+    cout << "f\n";
     cout << "double: " << i;
     if (i == static_cast<int>(i))
         cout << ".0";
