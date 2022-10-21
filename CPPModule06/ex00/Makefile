@@ -1,4 +1,4 @@
-NAME = ./a.out
+NAME = ./convertor
 SRCS = ./main.cpp
 INC = 
 FLAGS = -Wall -Wextra -Werror -std=c++98
