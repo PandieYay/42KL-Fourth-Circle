@@ -14,7 +14,7 @@ T &Array<T>::operator[](unsigned int index)
 }
 
 template <typename T>
-unsigned int Array<T>::size(void)
+unsigned int Array<T>::size(void) const
 {
     return _size;
 }
@@ -36,13 +36,21 @@ Array<T>::Array(unsigned int n)
 template <typename T>
 Array<T>::Array(const Array &a)
 {
-    _array = a._array;
+    _size = a._size;
+    _array = new T[a.size()];
+    for (unsigned int i = 0; i < a.size(); i++)
+        _array[i] = a._array[i];
 }
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array &a)
 {
-    _array = a._array;
+    if (_size != 0)
+        delete []_array;
+    _size = a._size;
+    _array = new T[a.size()];
+    for (unsigned int i = 0; i < a.size(); i++)
+        _array[i] = a._array[i];
     return *this;
 }
 

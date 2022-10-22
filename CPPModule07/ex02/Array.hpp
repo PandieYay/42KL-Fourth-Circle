@@ -15,7 +15,7 @@ template <typename T> class Array
 		Array &operator = (const Array &a);
         ~Array();
         T &operator [] (unsigned int index);
-        unsigned int size(void);
+        unsigned int size(void) const;
         class IndexOutOfBounds : public std::exception
         {
         public:
