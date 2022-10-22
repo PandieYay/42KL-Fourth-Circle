@@ -1,0 +1,9 @@
+The Num: 2514
+The Num: 203
+The Num: 2444
+The Num: 8164
+The Num: 9355
+Min Span: 2241
+Max Span: 9152
+
+Actual output should be for min: 2514-2444
