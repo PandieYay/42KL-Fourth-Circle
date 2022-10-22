@@ -1,7 +1,4 @@
 #include "Span.hpp"
-#include <iostream>
-
-using std::cout;
 
 void Span::addNumber(int num)
 {
@@ -16,9 +13,7 @@ void Span::manyNumbers(int range)
     srand(time(0));
     for (int i = 0; i < range; i++)
     {
-        int num = rand() % 10000;
-        cout << "The Num: " << num << "\n";
-        addNumber(num); 
+        addNumber(rand()); 
     }
 }
 
@@ -28,12 +23,20 @@ unsigned int Span::shortestSpan(void)
         throw notEnoughNums();
     vector<int>temp = _numbers;
 
-    int min = *std::min_element(_numbers.begin(), _numbers.end());
-    _numbers.erase(std::remove(_numbers.begin(), _numbers.end(), min), _numbers.end());
-    int min2 = *std::min_element(_numbers.begin(), _numbers.end());
-
-    _numbers = temp;
-    return (min2 - min);
+    vector<unsigned int> clone(_numbers.begin(), _numbers.end());
+    std::sort(clone.begin(), clone.end());
+    clone.erase(std::unique(clone.begin(), clone.end()), clone.end());
+    //Checks if there were only duplicate numbers
+    if (clone.size() == 1)
+        return 0;
+    unsigned int minDiff = clone[1] - clone[0];
+    for (unsigned long i = 1; i < clone.size() - 1; i++)
+    {
+        if (clone[i + 1] - clone[i] < minDiff)
+            minDiff = clone[i + 1] - clone[i];
+    }
+    clone.clear();
+    return minDiff;
 }
 
 unsigned int Span::longestSpan(void)
@@ -42,7 +45,6 @@ unsigned int Span::longestSpan(void)
         throw notEnoughNums();
     std::pair<vector<int>::iterator, vector<int>::iterator> ptr;
     ptr = std::minmax_element(_numbers.begin(), _numbers.end());
-    // cout << *ptr.first;
     return (*ptr.second - *ptr.first);
 }
 

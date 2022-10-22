@@ -14,8 +14,8 @@ int main(void)
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
-        std::cout << sp.shortestSpan() << std::endl;
-        std::cout << sp.longestSpan() << std::endl;
+        std::cout << "Min Span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Max Span: " << sp.longestSpan() << std::endl;
     }
 
     // Test Case 2
@@ -30,8 +30,8 @@ int main(void)
 
     //Test case 3
     {
-        Span sp = Span(5);
-        sp.manyNumbers(5);
+        Span sp = Span(10000);
+        sp.manyNumbers(10000);
         std::cout << "Min Span: " << sp.shortestSpan() << std::endl;
         std::cout << "Max Span: " << sp.longestSpan() << std::endl;
     }
