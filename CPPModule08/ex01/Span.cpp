@@ -31,10 +31,8 @@ unsigned int Span::shortestSpan(void)
         return 0;
     unsigned int minDiff = clone[1] - clone[0];
     for (unsigned long i = 1; i < clone.size() - 1; i++)
-    {
         if (clone[i + 1] - clone[i] < minDiff)
             minDiff = clone[i + 1] - clone[i];
-    }
     clone.clear();
     return minDiff;
 }

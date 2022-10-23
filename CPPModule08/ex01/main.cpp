@@ -7,6 +7,7 @@ using std::cout;
 int main(void)
 {
     // Test case pdf
+    cout << "Test case pdf: \n";
     {
         Span sp = Span(5);
         sp.addNumber(6);
@@ -19,6 +20,7 @@ int main(void)
     }
 
     // Test Case 2
+    cout << "\nTest case 2: \n";
     {
         Span sp = Span(3);
         sp.addNumber(-2);
@@ -29,6 +31,7 @@ int main(void)
     }
 
     //Test case 3
+    cout << "\nTest case 3: \n";
     {
         Span sp = Span(10000);
         sp.manyNumbers(10000);
